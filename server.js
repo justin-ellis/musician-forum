@@ -3,11 +3,13 @@ const app = express();
 const membersController = require('./controllers/members.js');
 
 
+
+
+app.use('/members', membersController);
+
 app.get('/', (req, res)=>{
 	res.render('index.ejs');
 });
-
-app.use('/members', membersController);
 
 
 // connection to server
