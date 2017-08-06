@@ -4,14 +4,18 @@ const Member = require('../models/members.js');
 const router = express.Router();
 
 router.get('/', (req, res)=>{
+	if (req.session.logged){
 	Post.find({}, (err, foundPosts)=>{
-		// Member.find({}, (err, foundMembers)=>{
 		res.render('posts/index.ejs', {
 			posts: foundPosts,
-			// members: foundMembers
-			// });
 		});
 	});
+	} else {
+		res.redirect('/session/login');
+	}		// want to show post creator next to posts on index
+			// Member.find({}, (err, foundMembers)=>{
+			// members: foundMembers
+			// });
 });
 
 router.get('/new', (req, res)=>{
@@ -58,8 +62,14 @@ router.delete('/:id', (req, res)=>{
 
 router.get('/:id/edit', (req, res)=>{
 	Post.findById(req.params.id, (err, foundPost)=>{
-		res.render('posts/edit.ejs', {	
-		post: foundPost
+		Member.find({}, (err, allMembers)=>{
+			Member.findOne({'posts._id':req.params.id}, (err, foundPostCreator)=>{
+				res.render('posts/edit.ejs', {	
+				post: foundPost,
+				members: allMembers,
+				postCreator: foundPostCreator
+				});
+			});
 		});
 	});
 });
@@ -68,8 +78,26 @@ router.get('/:id/edit', (req, res)=>{
 
 
 router.put('/:id', (req, res)=>{
-	Post.findByIdAndUpdate(req.params.id, req.body, ()=>{
-	res.redirect('/posts');
+	Post.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedPost)=>{
+		Member.findOne({'posts._id':req.params.id}, (err, foundMember)=>{
+	if(foundMember._id.toString() !== req.body.memberId){
+		foundMember.posts.id(req.params.id).remove();
+		foundMember.save((err, savedFoundMember)=>{
+			Member.findById(req.body.memberId, (err, newMember)=>{
+				newMember.posts.push(updatedPost);
+				newMember.save((err, savedNewMember)=>{
+					res.redirect('/posts/'+req.params.id);
+				});
+			});
+		});
+	} else {
+		foundMember.posts.id(req.params.id).remove();
+			foundMember.posts.push(updatedPost);
+			foundMember.save((err, data)=>{
+				res.redirect('/posts/'+req.params.id);
+			});
+		}
+		});
 	});
 });
 
