@@ -35,12 +35,17 @@ router.put('/:id', (req, res)=>{
 });
 
 
-
 router.get('/:id', (req, res)=>{
 	Member.findById(req.params.id, (err, foundMember)=>{
 		res.render('members/show.ejs', {
 			member: foundMember
 		});
+	});
+});
+
+router.delete('/:id', (req, res)=>{
+	Member.findByIdAndRemove(req.params.id, (err, foundMember)=>{
+		res.redirect('/members');
 	});
 });
 
