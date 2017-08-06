@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title></title>
+		<link rel="stylesheet" type="text/css" href="../main.css">
+</head>
+<body>
+<header>
+	<h1>Post Edit Page</h1>
+	<nav>
+		<ul>
+			<li>
+		<a href="/posts">Post Index</a> <br/>
+		</li>
+		<li><a href="/">Home</a>
+		</li>
+		</ul>
+		</nav>
+		</header>
+		<main>
+		<h2>Post Attributes:</h2>
+		<form action='/posts/<%=post._id%>?_method=PUT' method="POST">
+			Description: <input type="text" name="descr" value="<%=post.descr%>"> <br/>
+			Image: <input type="text" name="img" value="<%=post.img%>"> <br/>
+			Category: <input type="text" name="category" value="<%=post.category%>"> <br/>
+			Sound: <input type="text" name="sound" value="<%=post.sound%>"> <br/>
+			
+			<input type="submit" value='Update Post'>
+		</form>
+		</main>
+</body>
+</html>

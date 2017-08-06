@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../main.css">
+</head>
+<body>
+<header>
+ <h1>Post Show Page</h1>
+ <nav>
+ 	<ul>
+ 		<li>
+ 			<a href="/posts">Posts Index</a>
+
+ 		</li>
+ 			<li>
+ 			<a href="/">Home</a>
+ 			</li>
+ 	</ul>
+ </nav>
+</header>
+<main>
+	<section>
+		<h2>Post Attributes:</h2>
+		<ul>
+			<li>Description:  <%=post.descr%></li>
+		 	<li>Image: <%=post.img%></li>
+		 	<li>Category:  <%=post.category%></li>
+		 	<li>Sound: <%=post.sound%></li>
+		</ul>
+	</section>
+	<section>
+		<form action ='/posts/<%=post.id%>?_method=DELETE' method='POST'>
+			<input type="submit" value="Delete This Post">
+		</form>
+	</section>
+	<section>
+		<a href="/posts/<%=post.id%>/edit">Edit This Post</a>
+	</section>
+
+	<section>
+	
+	</section>
+</main>
+</body>
+</html>
