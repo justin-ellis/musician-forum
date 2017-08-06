@@ -20,7 +20,7 @@
 		<main>
 		<h2>List of Members</h2>
 		<% for (let i = 0; i < members.length; i++) {%>
-		Member: <%= members[i].name %> <br/>
+		Member: <a href="/members/<%=members[i].id%>"><%= members[i].username %></a> <br/>
 		<%}%>
 		</main>
 </body>

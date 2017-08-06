@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const memberSchema = mongoose.Schema({
-	name: {type: String, required: true}
+	username: {type: String, required: true}
 });
 
 const Member = mongoose.model('Member', memberSchema);

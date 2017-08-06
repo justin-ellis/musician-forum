@@ -20,4 +20,12 @@ router.post('/', (req, res)=>{
 	});
 });
 
+router.get('/:id', (req, res)=>{
+	Member.findById(req.params.id, (err, foundMember)=>{
+		res.render('members/show.ejs', {
+			member: foundMember
+		});
+	});
+});
+
 module.exports = router;
