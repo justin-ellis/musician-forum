@@ -5,8 +5,11 @@ const router = express.Router();
 
 router.get('/', (req, res)=>{
 	Post.find({}, (err, foundPosts)=>{
+		// Member.find({}, (err, foundMembers)=>{
 		res.render('posts/index.ejs', {
-			posts:foundPosts
+			posts: foundPosts,
+			// members: foundMembers
+			// });
 		});
 	});
 });
