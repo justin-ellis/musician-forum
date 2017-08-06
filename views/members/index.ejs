@@ -4,9 +4,24 @@
 	<title></title>
 </head>
 <body>
+	<header>
 	<h1>Members Index Page</h1>
+		<ul>
+		<nav>
+		<li>
+		<a href="/">Home</a>
+		</li>
+		<li>
+		<a href="/members/new">Create a new Member</a>
+		</li>
+		</ul>
+		</nav>
+		</header>
+		<main>
+		<h2>List of Members</h2>
 		<% for (let i = 0; i < members.length; i++) {%>
-		<%= members[i] %>
+		Member: <%= members[i].name %> <br/>
 		<%}%>
+		</main>
 </body>
 </html>
