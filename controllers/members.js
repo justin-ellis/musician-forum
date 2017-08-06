@@ -3,7 +3,11 @@ const router = express.Router();
 const Member = require('../models/members.js');
 
 router.get('/', (req, res)=>{
-	res.render('members/index.ejs');
+	Member.find({}, (err, foundMembers)=>{
+		res.render('members/index.ejs', {
+			members:foundMembers
+		});
+	});
 });
 
 router.get('/new', (req, res)=>{
