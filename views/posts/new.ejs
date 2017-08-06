@@ -6,10 +6,25 @@
 </head>
 <body>
 	<h1>New Post Page</h1>
+	<nav>
+		<ul>
+			<li>
+				<a href="/">Home</a>
+			</li>
+			<li>
+				<a href="/posts">Post Index</a>
+			</li>
+		</ul>
 
+	</nav>
 	<form action='/posts' method="POST">
-		Description: <input type="text" name="descr">
-		Image: <input type="text" name="img">
+	Post Author:
+	<select name="memberId">
+			<% for (let i = 0; i < members.length; i++) {%>
+			<option value='<%=members[i]._id%>'> <%=members[i].username%></option>
+			<%}%> </select> <br/>
+		Description: <input type="text" name="descr"> <br/>
+		Image: <input type="text" name="img"> <br/>
 		<input type="submit" value="Create Post">
 	</form>
 </body>

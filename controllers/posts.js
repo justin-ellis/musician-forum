@@ -53,9 +53,6 @@ router.delete('/:id', (req, res)=>{
 });
 
 
-
-
-
 router.get('/:id/edit', (req, res)=>{
 	Post.findById(req.params.id, (err, foundPost)=>{
 		res.render('posts/edit.ejs', {	
@@ -63,6 +60,9 @@ router.get('/:id/edit', (req, res)=>{
 		});
 	});
 });
+
+
+
 
 router.put('/:id', (req, res)=>{
 	Post.findByIdAndUpdate(req.params.id, req.body, ()=>{

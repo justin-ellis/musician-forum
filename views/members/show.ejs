@@ -34,9 +34,19 @@
 	<section>
 		<a href="/members/<%=member.id%>/edit">Edit This Member</a>
 	</section>
-
 	<section>
-	
+		<h2>Posts By This Member:</h2>
+		<ul>
+					<% for (let i = 0; i < member.posts.length; i++){%>
+					<a href="/posts/<%=member.posts[i].id%>">
+					<li><%=member.posts[i].descr%></li>
+					</a>
+						<%}%>
+					
+						
+					
+				</ul>
+
 	</section>
 </main>
 </body>
