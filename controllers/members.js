@@ -20,6 +20,22 @@ router.post('/', (req, res)=>{
 	});
 });
 
+router.get('/:id/edit', (req, res)=>{
+	Member.findById(req.params.id, (err, foundMember)=>{
+		res.render('members/edit.ejs', {	
+		member: foundMember
+		});
+	});
+});
+
+router.put('/:id', (req, res)=>{
+	Member.findByIdAndUpdate(req.params.id, req.body, (err, updatedMember)=>{
+	res.redirect('/members');
+	});
+});
+
+
+
 router.get('/:id', (req, res)=>{
 	Member.findById(req.params.id, (err, foundMember)=>{
 		res.render('members/show.ejs', {
