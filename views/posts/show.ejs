@@ -21,6 +21,9 @@
  			<li>
  			<a href="/">Home</a>
  			</li>
+ 			<li>
+ 				<a href="session/logout">Logout</a>
+ 			</li>
  	</ul>
  </nav>
 </header>
@@ -29,7 +32,7 @@
 		<h2>Post Attributes:</h2>
 		<ul>
 			<li>Description:  <%=post.descr%></li>
-		 	<li>Image: <%=post.img%></li>
+		 	<li>Image: <img class="imagePost" src="<%=post.img%>"></li>
 		 	<li>Category:  <%=post.category%></li>
 		 	<li>Sound: <%=post.sound%></li>
 		</ul>

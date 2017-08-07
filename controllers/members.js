@@ -3,6 +3,7 @@ const Member = require('../models/members.js');
 const Post = require('../models/posts.js');
 const router = express.Router();
 
+// MEMBERS INDEX PAGE
 router.get('/', (req, res)=>{
 	Member.find({}, (err, foundMembers)=>{
 		res.render('members/index.ejs', {
@@ -11,16 +12,19 @@ router.get('/', (req, res)=>{
 	});
 });
 
+// POSTING NEWLY CREATED MEMBERS
 router.post('/', (req, res)=>{
 	Member.create(req.body, (err, createdMember)=>{
 	res.redirect('/members');
 	});
 });
 
+// CREATING A NEW MEMBER PAGE
 router.get('/new', (req, res)=>{
 	res.render('members/new.ejs');
 });
 
+// MEMBER SHOW PAGE
 router.get('/:id', (req, res)=>{
 	Member.findById(req.params.id, (err, foundMember)=>{
 		res.render('members/show.ejs', {
@@ -29,6 +33,7 @@ router.get('/:id', (req, res)=>{
 	});
 });
 
+// MEMBER DELETE ROUTE(deletes member's posts as well)
 router.delete('/:id', (req, res)=>{
 	Member.findByIdAndRemove(req.params.id, (err, foundMember)=>{
 	Member.findById(req.params.id, (err, foundMember)=>{
@@ -47,6 +52,7 @@ router.delete('/:id', (req, res)=>{
 	});
 });
 
+// MEMBER EDIT PAGE
 router.get('/:id/edit', (req, res)=>{
 	Member.findById(req.params.id, (err, foundMember)=>{
 		res.render('members/edit.ejs', {	
@@ -55,6 +61,7 @@ router.get('/:id/edit', (req, res)=>{
 	});
 });
 
+// MEMBER UPDATE ROUTE
 router.put('/:id', (req, res)=>{
 	Member.findByIdAndUpdate(req.params.id, req.body, ()=>{
 	res.redirect('/members');

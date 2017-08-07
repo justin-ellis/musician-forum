@@ -26,14 +26,17 @@ app.get('/', (req, res)=>{
 	res.render('index.ejs');
 });
 
-
-mongoose.connect('mongodb://localhost:27017/forum');
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/forum';
+mongoose.connect(mongoUri);
+// mongoose.connect('mongodb://localhost:27017/forum'); // remove this, activiate ^
 
 mongoose.connection.once('open', ()=>{
 	console.log('connected to mongo');
 });
 
+const port = process.env.PORT || 3000;
+
 // connection to server
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
 	console.log('listening');
 });
