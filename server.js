@@ -26,7 +26,7 @@ app.get('/', (req, res)=>{
 	res.render('index.ejs');
 });
 
-const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/forum';
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/musician-forum';
 mongoose.connect(mongoUri);
 // mongoose.connect('mongodb://localhost:27017/forum'); // remove this, activiate ^
 
