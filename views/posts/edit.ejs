@@ -3,13 +3,15 @@
 <head>
 <meta charset="utf-8">
 	<title></title>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="../main.css">
 </head>
 <body>
 <header>
 	<h1>Edit <%=post.descr%> Info</h1>
-	<nav>
-		<ul>
+	<nav class="navbar navbar-default">
+<div class="container-fluid">
+ 	<ul class="nav navbar-nav">
 			<li>
 		<a href="/posts">Post Index</a> <br/>
 		</li>
@@ -19,6 +21,7 @@
  				<a href="session/logout">Logout</a>
  			</li>
 		</ul>
+		</div>
 		</nav>
 		</header>
 		<main>
@@ -43,7 +46,7 @@
 
 
 
-
+			Title: <input type="text" name="title" value="<%=post.title%>"/> <br/>
 			Description: <input type="text" name="descr" value="<%=post.descr%>"/> <br/>
 			Image: <input type="text" name="img" value="<%=post.img%>"/> <br/>
 			Category: <input type="text" name="category" value="<%=post.category%>"/> <br/>
@@ -52,5 +55,6 @@
 			<input type="submit" value='Update Post'/>
 		</form>
 		</main>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

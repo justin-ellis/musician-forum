@@ -2,12 +2,14 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../main.css">
 </head>
 <body>
 	<h1>New Member Page</h1>
-		<nav>
-			<ul>
+		<nav class="navbar navbar-default">
+<div class="container-fluid">
+ 	<ul class="nav navbar-nav">
 				<li>
 					<a href="/">Home</a>
 				</li>
@@ -19,12 +21,13 @@
  			</li>
 			</ul>
 
-
+	</div>
 		</nav>
 	<form action='/members' method="POST">
 		Username: <input type="text" name="username">
 		Password: <input type="text" name="password">
 		<input type="submit" value="Create Member">
 	</form>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

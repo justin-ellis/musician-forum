@@ -2,13 +2,15 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../main.css">
 </head>
 <body>
 <header>
  <h1>Member Show Page</h1>
- <nav>
- 	<ul>
+ <nav class="navbar navbar-default">
+<div class="container-fluid">
+ 	<ul class="nav navbar-nav">
  		<li>
  			<a href="/members">Members Index</a>
 
@@ -16,33 +18,36 @@
  			<li>
  			<a href="/">Home</a>
  			</li>
- 	</ul>
  	<li>
  				<a href="session/logout">Logout</a>
  			</li>
+ 	</ul>
+ 			</div>
  </nav>
 </header>
 <main>
 	<section>
 		<h2>Member Attributes:</h2>
 		<ul>
-			<li> <%=member.username%></li>
+			<li> Name: <%=member.username%></li>
 		</ul>
 	</section>
+	<section>
+		<button class="btn"><a  href="/members/<%=member.id%>/edit">Edit This Member</a>
+		</button>
+	</section>
+	<br/>
 	<section>
 		<form action ='/members/<%=member.id%>?_method=DELETE' method='POST'>
 			<input type="submit" value="Delete This Member">
 		</form>
 	</section>
 	<section>
-		<a href="/members/<%=member.id%>/edit">Edit This Member</a>
-	</section>
-	<section>
 		<h2>Posts By This Member:</h2>
 		<ul>
 					<% for (let i = 0; i < member.posts.length; i++){%>
 					<a href="/posts/<%=member.posts[i].id%>">
-					<li><%=member.posts[i].descr%></li>
+					<li><%=member.posts[i].title%></li>
 					</a>
 						<%}%>
 					
@@ -52,5 +57,6 @@
 
 	</section>
 </main>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

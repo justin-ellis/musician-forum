@@ -2,12 +2,14 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../main.css">
 </head>
 <body>
 	<h1>New Post Page</h1>
-	<nav>
-		<ul>
+<nav class="navbar navbar-default">
+<div class="container-fluid">
+ 	<ul class="nav navbar-nav">
 			<li>
 				<a href="/">Home</a>
 			</li>
@@ -18,7 +20,7 @@
  				<a href="session/logout">Logout</a>
  			</li>
 		</ul>
-
+	</div>
 	</nav>
 	<form action='/posts' method="POST">
 	Post Author:
@@ -26,9 +28,12 @@
 			<% for (let i = 0; i < members.length; i++) {%>
 			<option value='<%=members[i]._id%>'> <%=members[i].username%></option>
 			<%}%> </select> <br/>
+		Title <input type="text" name="title"> <br/>
 		Description: <input type="text" name="descr"> <br/>
 		Image: <input type="text" name="img"> <br/>
+		Youtube Demo: <input type="text" name="sound"> <br/>
 		<input type="submit" value="Create Post">
 	</form>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

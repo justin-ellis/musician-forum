@@ -2,7 +2,6 @@ body{
 	background-color: lavender;
 }
 
-.imagePost {
-	max-width: 500px;
-	max-height: 500px;
+ul {
+	list-style-type: none;
 }

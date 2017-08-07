@@ -38,5 +38,5 @@ const port = process.env.PORT || 3000;
 
 // connection to server
 app.listen(port, (req, res)=>{
-	console.log('super cool');
+	console.log('listening');
 });

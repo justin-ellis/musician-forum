@@ -2,13 +2,15 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../main.css">
 </head>
 <body>
 	<header>
 	<h1>Members Index Page</h1>
-		<ul>
-		<nav>
+		<nav class="navbar navbar-default">
+<div class="container-fluid">
+ 	<ul class="nav navbar-nav">
 		<li>
 		<a href="/">Home</a>
 		</li>
@@ -16,16 +18,21 @@
 		<a href="/members/new">Create a new Member</a>
 		</li>
 		<li>
+		<a href="/posts">Posts Index</a>
+		</li>
+		<li>
  				<a href="session/logout">Logout</a>
  			</li>
 		</ul>
+		</div>
 		</nav>
 		</header>
 		<main>
 		<h2>List of Members</h2>
 		<% for (let i = 0; i < members.length; i++) {%>
-		Member: <a href="/members/<%=members[i].id%>"><%= members[i].username %></a> <br/>
+		<a href="/members/<%=members[i].id%>"><%= members[i].username %></a> <br/>
 		<%}%>
 		</main>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

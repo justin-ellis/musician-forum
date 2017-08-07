@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const postSchema = mongoose.Schema({
-	img: {type: String, required: true},
+	title: {type: String, required: true},
+	img: {type: String},
 	descr: {type: String, required: true},
 	category: {type: String},
 	sound: {type: String}
