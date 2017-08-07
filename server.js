@@ -10,7 +10,7 @@ app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended:false}));
 
 app.use(session({
-	secret: "This is a random secret string",
+	secret: "random secret string",
 	resave: false,
 	saveUninitialized: false
 }));
@@ -38,5 +38,5 @@ const port = process.env.PORT || 3000;
 
 // connection to server
 app.listen(port, (req, res)=>{
-	console.log('listening');
+	console.log('super cool');
 });
