@@ -28,7 +28,7 @@ app.get('/', (req, res)=>{
 
 const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/musician-forum';
 mongoose.connect(mongoUri);
-// mongoose.connect('mongodb://localhost:27017/forum'); // remove this, activiate ^
+// mongoose.connect('mongodb://localhost:27017/forum'); // remove this, activiate 
 
 mongoose.connection.once('open', ()=>{
 	console.log('connected to mongo');
