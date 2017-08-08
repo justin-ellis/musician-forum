@@ -5,3 +5,13 @@ body{
 ul {
 	list-style-type: none;
 }
+
+form {
+	margin: 0 auto;
+	max-width: 70%;
+}
+
+#logo {
+	font-size: 1.75em;
+	padding: 0px 10px;
+}

@@ -23,17 +23,23 @@
 	</div>
 	</nav>
 	<form action='/posts' method="POST">
+	<div class ="form-group">
 	Post Author:
-	<select name="memberId">
+	<select class="form-control" name="memberId">
 			<% for (let i = 0; i < members.length; i++) {%>
 			<option value='<%=members[i]._id%>'> <%=members[i].username%></option>
 			<%}%> </select> <br/>
-		Title <input type="text" name="title"> <br/>
-		Description: <input type="text" name="descr"> <br/>
-		Image: <input type="text" name="img"> <br/>
-		Youtube Demo: <input type="text" name="sound"> <br/>
-		<input type="submit" value="Create Post">
+		Title: <input class="form-control" type="text" name="title"> <br/>
+		Description: <input class="form-control" type="text" name="descr"> <br/>
+		Image: <input class="form-control" type="text" name="img"> <br/>
+		Youtube Demo: <input class="form-control" type="text" name="sound"> <br/>
+		<input class="form-control" type="submit" value="Create Post">
+	</div>
 	</form>
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
