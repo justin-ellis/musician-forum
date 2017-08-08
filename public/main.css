@@ -1,9 +1,14 @@
 body{
-	background-color: lavender;
+	background-color: black;
 }
 
 ul {
 	list-style-type: none;
+	padding-left: 0px;
+}
+
+a {
+	color: skyblue;
 }
 
 form {
@@ -12,6 +17,40 @@ form {
 }
 
 #logo {
-	font-size: 1.75em;
+	color: white;
+	font-size: 2em;
 	padding: 0px 10px;
+}
+
+main {
+	margin-top: 5%;
+	text-align: center;
+}
+
+
+#main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navbar {
+	border-radius: 7px;
+	background-color: black;
+	margin: 5px 10px 5px 10px;
+}
+
+body {
+	color: white;
+	font-family: 'Merriweather', serif;
+}
+
+input, select, textarea{
+	color: black;
+}
+
+button {
+	border-radius: 4px;
+	background-color: #313131;
+	color: white;
 }
