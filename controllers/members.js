@@ -36,7 +36,6 @@ router.get('/:id', (req, res)=>{
 // MEMBER DELETE ROUTE(deletes member's posts as well)
 router.delete('/:id', (req, res)=>{
 	Member.findByIdAndRemove(req.params.id, (err, foundMember)=>{
-	// Member.findById(req.params.id, (err, foundMember)=>{
 		const postIds= [];
 		for (let i = 0; i < foundMember.posts.length; i++) {
 			postIds.push(foundMember.posts[i].id);
@@ -50,7 +49,7 @@ router.delete('/:id', (req, res)=>{
 			});
 		});
 	});
-// });
+
 
 // MEMBER EDIT PAGE
 router.get('/:id/edit', (req, res)=>{
