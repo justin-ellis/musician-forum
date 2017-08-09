@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const User = require('../models/users');
+const Member = require('../models/members');
 
 router.get('/login', (req, res)=>{
 	res.render('users/login.ejs', {message: req.session.message || ""});
@@ -43,8 +44,12 @@ User.create(userDbEntry, (err, user)=>{
 	req.session.message = "";
 	req.session.username = user.username;
 	req.session.logged = true;
-	res.redirect('/members');
 	});
+Member.create(req.body, (err, createdMember)=>{
+	Member.username = req.session.username;
+	Member.password = password;
+	res.redirect('/members');
+});
 });
 
 router.get('/register', (req, res)=>{
