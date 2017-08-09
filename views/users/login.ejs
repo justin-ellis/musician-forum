@@ -21,12 +21,13 @@
 </nav>
 </header>
 <h1>Login Page</h1>
+<div id="log">
 <form action="/session/login" method="POST">
    Username: <input type="text" name="username" value="">
    Password: <input type="password" name="password" value="">
    <button>Login</button>
 </form>
-
+</div>
 <%if(message) {%>
 <%=message%>
 <%}%>

@@ -2,6 +2,10 @@ body{
 	background-color: black;
 }
 
+h1 {
+	text-align: center;
+}
+
 ul {
 	list-style-type: none;
 	padding-left: 0px;
@@ -13,7 +17,7 @@ a {
 
 form {
 	margin: 0 auto;
-	max-width: 70%;
+/*	max-width: 70%;*/
 }
 
 #logo {
@@ -37,7 +41,7 @@ main {
 .navbar {
 	border-radius: 7px;
 	background-color: black;
-	margin: 5px 10px 5px 10px;
+	margin: 10px 10px 5px 10px;
 }
 
 body {
@@ -53,4 +57,17 @@ button {
 	border-radius: 4px;
 	background-color: #313131;
 	color: white;
+}
+
+#lesswidth {
+	border: none;
+	color: skyblue;
+	background-color: red;
+	margin: 0 auto;
+	width: 6%;
+}
+#log {
+	display: block;
+	text-align: center;
+	margin: 0 auto;
 }
