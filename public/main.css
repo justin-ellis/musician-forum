@@ -64,7 +64,7 @@ button {
 	color: skyblue;
 	background-color: red;
 	margin: 0 auto;
-	width: 6%;
+	width: 200px;
 }
 #log {
 	display: block;
@@ -74,16 +74,19 @@ button {
 
 #footer {
 	text-align: center;
-	border-top: 2px solid white;
+	border-top: 2px solid grey;
 margin: auto;
   width: 100%;
   position: fixed;
   right: 0;
   bottom: 0;
   left: 0;
+  background-color: white;
+  color:black;
 }
 
 .fa {
+	margin-bottom: 5px;
 	margin-top: 5px;
     padding: 20px;
     font-size: 15px;
@@ -94,8 +97,8 @@ margin: auto;
 }
 
 .fa-github {
-background: white;
-color: black;
+background: black;
+color: white;
 }
 
 .fa:hover {
@@ -115,3 +118,25 @@ color: black;
 .nav ul li a {
 	color:white;
 }
+
+#rick {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	display: inline;
+}
+
+.navbar .container-fluid .nav a {
+	color: white;
+
+}
+
+.navbar .container-fluid .nav a:hover{
+	background-color: white;
+}
+
+.navbar .container-fluid .nav #rick:hover{
+	background-color: grey;
+}
+
+
