@@ -24,7 +24,7 @@
 		</ul>
 	</div>
 	</nav>
-	<form action='/posts' method="POST">
+	<form id="newPost" action='/posts' method="POST">
 	<div class ="form-group">
 	Post Author:
 	<select class="form-control" name="memberId">
@@ -34,8 +34,9 @@
 		Title: <input class="form-control" type="text" name="title"> <br/>
 		Description: <input class="form-control" type="text" name="descr"> <br/>
 		Image: <input class="form-control" type="text" name="img"> <br/>
+		Category: <input class="form-control" type="text" name="category"> <br/>
 		Youtube Demo: <input class="form-control" type="text" name="sound"> <br/>
-		<input class="form-control" type="submit" value="Create Post">
+		<input id="createPost" class="form-control" type="submit" value="Create Post">
 	</div>
 	</form>
 	<footer>

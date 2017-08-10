@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="../main.css">
 </head>
 <body>
+
 <header>
 	<nav class="navbar navbar-default">
 <div class="container-fluid">
@@ -20,26 +21,33 @@
 </div>
 </nav>
 </header>
-<h1>Register Page</h1>
+
 <div id="log">
-<form action='/session/register' method='POST'>
+<h3>Member Registration</h3>
+<br/>
+<form id="moreSpace" action='/session/register' method='POST'>
    Username: <input type="text" name="username" value="">
    Password: <input type="password" name="password" value="">
-   <button>Register</button>
+   <button id="register" >Register</button>
+   
+   
 </form>
+<h4 id="account" >Create an account to view and make posts!</h4>
 </div>
-
+<div id="guitar"><img src="https://mkr44k6om2-flywheel.netdna-ssl.com/wp-content/uploads/2017/06/musical.jpg"></div>
 <footer>
   <div id="footer">
   <a target="_blank" href="https://github.com/justin-ellis" class="fa fa-github"></a>
   <a target="_blank" href="https://www.facebook.com/justin.ellis.5876060" class="fa fa-facebook"></a>
 <a target="_blank" href="https://twitter.com/jellishouse" class="fa fa-twitter"></a></div>
   </footer>
+  
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </body>
 </html>
 

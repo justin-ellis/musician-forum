@@ -35,14 +35,14 @@
 		</ul>
 	</section>
 	<section>
-		<button class="btn"><a  href="/members/<%=member.id%>/edit">Edit This Member</a>
+		<button class="btn"><a  href="/members/<%=member._id%>/edit">Edit This Member</a>
 		</button>
 	</section>
 	<br/>
 	<section>
 <!-- 	<div class="input-group">
 	<span class="input-group-addon">Delete</span></div> -->
-		<form action ='/members/<%=member.id%>?_method=DELETE' method='POST'>
+		<form action ='/members/<%=member._id%>?_method=DELETE' method='POST'>
 			<input id="lesswidth" type="submit" class="form-control" value="Delete This Member"/>
 		
 		</form>
@@ -51,10 +51,16 @@
 	<section>
 		<h2>Posts By This Member:</h2>
 		<ul>
+					<% if(member.posts.length === 0){%>
+							<p>You haven't made any posts yet.</p> <a href="/posts/new">Make a post!</a>
+					<%} else {%>
 					<% for (let i = 0; i < member.posts.length; i++){%>
+						<%if (member.posts.length > 0){ %>
 					<a href="/posts/<%=member.posts[i].id%>">
 					<li><%=member.posts[i].title%></li>
 					</a>
+					<%}%>
+						<%}%>
 						<%}%>
 					
 						
