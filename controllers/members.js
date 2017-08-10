@@ -5,11 +5,15 @@ const router = express.Router();
 
 // MEMBERS INDEX PAGE
 router.get('/', (req, res)=>{
+	if (req.session.logged){
 	Member.find({}, (err, foundMembers)=>{
 		res.render('members/index.ejs', {
 			members:foundMembers
 		});
 	});
+} else {
+	res.redirect('/session/register');
+}
 });
 
 // POSTING NEWLY CREATED MEMBERS

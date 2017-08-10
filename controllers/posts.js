@@ -12,7 +12,7 @@ router.get('/', (req, res)=>{
 		});
 	});
 	} else {
-		res.redirect('/session/login');
+		res.redirect('/session/register');
 	}		// want to show post creator next to posts on index
 			// Member.find({}, (err, foundMembers)=>{
 			// members: foundMembers
