@@ -32,7 +32,7 @@ form {
 
 #logo {
 	color: white;
-	font-size: 1.8em;
+	font-size: 1.45em;
 	padding: 0px 10px;
 }
 
@@ -232,4 +232,8 @@ margin: 2% 0;
 
 #noPad {
 	margin-right: 0px;
+}
+
+.editNav ul{
+	height: 50px;
 }

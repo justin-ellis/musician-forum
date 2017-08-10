@@ -10,10 +10,10 @@
 	
 </head>
 <body>
-<header>
-	<h1>Member Edit Page</h1>
-	<nav class="navbar navbar-default">
-<div class="container-fluid">
+<header class="editNav">
+
+	<nav class="navbar navbar-default" class="editNav">
+<div class="container-fluid" class="editNav">
  	<ul class="nav navbar-nav">
 			<li>
 		<a href="/members">Member Index</a> <br/>
@@ -24,17 +24,25 @@
  				<a href="session/logout">Logout</a>
  			</li>
 		</ul>
+		<ul class="nav pull-right">
+ 		
+ 		<li>
+ 			<span class="glyphicon glyphicon-music" aria-hidden="true"></span><span id ="logo">Musician Forum </span> <a target="_blank" id="rick" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a>
+ 			</li>
+ 		</li>
+ 		
+ 	</ul>
 		</div>
 		</nav>
 		</header>
 		<main>
-		<h2>Member Attributes:</h2>
-		<form action='/members/<%=member._id%>?_method=PUT' method="POST">
-			Username: <input type="text" name="username" value="<%=member.username%>"> <br/>
-			Password: <input type="text" name="password" value="<%=member.password%>"> <br/>
+		<h2>Edit Login Details:</h2>
+		<form id="newPost" action='/members/<%=member._id%>?_method=PUT' method="POST">
+			Username: <input class="form-control" type="text" name="username" value="<%=member.username%>"> <br/>
+			Password: <input class="form-control" type="password" name="password" value="<%=member.password%>"> <br/>
 			
 			
-			<input type="submit" value='Update Member'>
+			<input id="createPost" class="form-control" type="submit" value='Update Member'>
 		</form>
 		</main>
 		<footer>
