@@ -20,11 +20,11 @@ if(user){
 		res.redirect('/members');
 	} else {
 		console.log('else in bcrypt compare');
-		req.session.message = "Username or password are incorrect";
+		req.session.message = "Username or password is incorrect";
 		res.redirect('/session/login');
 	}
 } else {
-	req.session.message = "Username or password are incorrect";
+	req.session.message = "Username or password is incorrect";
 	res.redirect('/session/login');
 	}
 
