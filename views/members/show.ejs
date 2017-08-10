@@ -9,17 +9,19 @@
 </head>
 <body>
 <header>
- <h1>Member Show Page</h1>
+
  <nav class="navbar navbar-default">
 <div class="container-fluid">
  	<ul class="nav navbar-nav">
- 		<li>
- 			<a href="/members">Members Index</a>
-
- 		</li>
  			<li>
  			<a href="/">Home</a>
  			</li>
+ 		<li>
+ 			<a href="/members">Members Index</a>
+ 		</li>
+ 		<li>
+ 			<a href="/posts/new">New Post</a>
+ 		</li>
  	<li>
  				<a href="session/logout">Logout</a>
  			</li>
@@ -29,9 +31,9 @@
 </header>
 <main>
 	<section>
-		<h2>Member Attributes:</h2>
+		<h2>Member Profile</h2>
 		<ul>
-			<li> Name: <%=member.username%></li>
+			<li> Username: <%=member.username%></li>
 		</ul>
 	</section>
 	<section>

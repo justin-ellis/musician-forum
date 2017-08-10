@@ -8,7 +8,6 @@
 	<link rel="stylesheet" type="text/css" href="../main.css">
 </head>
 <body>
-	<h1>New Member Page</h1>
 		<nav class="navbar navbar-default">
 <div class="container-fluid">
  	<ul class="nav navbar-nav">
@@ -25,10 +24,13 @@
 
 	</div>
 		</nav>
-	<form action='/members' method="POST">
-		Username: <input type="text" name="username">
-		Password: <input type="text" name="password">
-		<input type="submit" value="Create Member">
+		<br/>
+	<h1>Become a member!</h1>
+
+	<form id="newPost" action='/members' method="POST">
+		Username: <input class="form-control" type="text" name="username">
+		Password: <input class="form-control" type="text" name="password"> <br/>
+		<input class="form-control" id="createPost" type="submit" value="Create Member">
 	</form>
 	<footer>
 	<div id="footer">

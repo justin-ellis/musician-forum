@@ -9,7 +9,6 @@
 </head>
 <body>
 	<header>
-	<h1>Members Index Page</h1>
 		<nav class="navbar navbar-default">
 <div class="container-fluid">
  	<ul class="nav navbar-nav">
@@ -30,7 +29,7 @@
 		</nav>
 		</header>
 		<main>
-		<h2>List of Members</h2>
+		<h1>Current Members</h1>
 		<% for (let i = 0; i < members.length; i++) {%>
 		<a href="/members/<%=members[i].id%>"><%= members[i].username %></a> <br/>
 		<%}%>

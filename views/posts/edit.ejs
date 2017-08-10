@@ -10,7 +10,6 @@
 </head>
 <body>
 <header>
-	<h1>Edit <%=post.descr%> Info</h1>
 	<nav class="navbar navbar-default">
 <div class="container-fluid">
  	<ul class="nav navbar-nav">
@@ -26,8 +25,9 @@
 		</div>
 		</nav>
 		</header>
+	<h1>Edit <%=post.title%> Info</h1>
 		<main>
-		<h2>Post Attributes:</h2>
+		
 		<form action='/posts/<%=post._id%>?_method=PUT' method="POST">
 
 

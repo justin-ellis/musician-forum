@@ -14,6 +14,9 @@
 <nav class="navbar navbar-default">
 <div class="container-fluid">
  	<ul class="nav navbar-nav">
+ 			<li>
+ 			<a href="/">Home</a>
+ 			</li>
  		<li>
  			<a href="/posts">Posts Index</a>
 
@@ -21,9 +24,6 @@
  		<li>
  			<a href="/posts/new">New Post</a>
  		</li>
- 			<li>
- 			<a href="/">Home</a>
- 			</li>
  			<li>
  				<a href="session/logout">Logout</a>
  			</li>
@@ -39,10 +39,8 @@
 </header>
 <main>
 	<section>
-		<h2>Post Attributes:</h2>
 		<ul>
-			<li><%=post.title%></li>
-		 	<li><img class="imagePost" src="<%=post.img%>"></li>
+		 	<li><img class="imagePost" src="<%=post.img%>"></li> <br/>
 		 	<li>Description:  <%=post.descr%></li>
 		 	<li>Category:  <%=post.category%></li>
 		 	<li>Demo: <a target="_blank" href="<%=post.sound%>">YouTube</a></li>
@@ -55,7 +53,7 @@
 	<br>
 	<section>
 		<form action ='/posts/<%=post.id%>?_method=DELETE' method='POST'>
-			<input type="submit" value="Delete This Post">
+			<input id="noPad" type="submit" value="Delete This Post">
 		</form>
 	</section>
 
