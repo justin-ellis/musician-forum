@@ -48,7 +48,9 @@ router.get('/:id', (req, res)=>{
 			post: foundPost,
 			member: foundMember
 			});
+		// res.send(foundMember);
 		});
+
 	});
 });
 

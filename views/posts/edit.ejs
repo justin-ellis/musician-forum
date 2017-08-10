@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="../main.css">
+		<link rel="stylesheet" type="text/css" href="/main.css">
 </head>
 <body>
 <header>
@@ -28,18 +28,16 @@
 	<h1>Edit <%=post.title%> Info</h1>
 		<main>
 		
-		<form action='/posts/<%=post._id%>?_method=PUT' method="POST">
+		<form id="newPost" action='/posts/<%=post._id%>?_method=PUT' method="POST">
+<div class="form-group">
 
-
-			<select name="memberId">
+			<select class="form-control" name="memberId">
                     <% for(let i = 0; i < members.length; i++) { %>
-                        <option
-							value="<%=members[i]._id%>"
-							<% if(members[i]._id.toString() === postCreator._id.toString()){ %>
-								selected
+       <option value="<%=members[i]._id%>"> <% if(members[i]._id.toString() === postCreator._id.toString()){ %>
+								Originally by:
 							<% } %>
-							>
-							<%=members[i].name%>
+							
+							<%=members[i].username%>
 						</option>
                     <% } %>
                 </select><br/>
@@ -48,13 +46,14 @@
 
 
 
-			Title: <input type="text" name="title" value="<%=post.title%>"/> <br/>
-			Description: <input type="text" name="descr" value="<%=post.descr%>"/> <br/>
-			Image: <input type="text" name="img" value="<%=post.img%>"/> <br/>
-			Category: <input type="text" name="category" value="<%=post.category%>"/> <br/>
-			Sound: <input type="text" name="sound" value="<%=post.sound%>"/> <br/>
+			Title: <input class="form-control" type="text" name="title" value="<%=post.title%>"/> <br/>
+			Description: <input class="form-control" type="text" name="descr" value="<%=post.descr%>"/> <br/>
+			Image: <input class="form-control" type="text" name="img" value="<%=post.img%>"/> <br/>
+			Category: <input class="form-control" type="text" name="category" value="<%=post.category%>"/> <br/>
+			Sound: <input class="form-control" ype="text" name="sound" value="<%=post.sound%>"/> <br/>
 			
-			<input type="submit" value='Update Post'/>
+			<input id="createPost" class="form-control" type="submit" value='Update Post'/>
+			</div>
 		</form>
 		</main>
 		<footer>

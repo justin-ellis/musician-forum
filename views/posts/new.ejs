@@ -34,11 +34,11 @@
 			<% for (let i = 0; i < members.length; i++) {%>
 			<option value='<%=members[i]._id%>'> <%=members[i].username%></option>
 			<%}%> </select> <br/>
-		Title: <input class="form-control" type="text" name="title"> <br/>
-		Description: <input class="form-control" type="text" name="descr"> <br/>
-		Image: <input class="form-control" type="text" name="img"> <br/>
-		Category: <input class="form-control" type="text" name="category"> <br/>
-		Youtube Demo: <input class="form-control" type="text" name="sound"> <br/>
+		Title: <input class="form-control" type="text" name="title" placeholder="required, ex. Fender Les Paul"> <br/>
+		Description: <input class="form-control" type="text" name="descr" placeholder="required, ex. Great sound/This model was first produced in 1964...etc"> <br/>
+		Image: <input class="form-control" type="text" name="img" placeholder="ex. https://******.jpg"><br/>
+		Category: <input class="form-control" type="text" name="category" placeholder="ex. Drums/Guitars/Song/etc."> <br/>
+		Youtube Demo: <input class="form-control" type="text" name="sound" placeholder="ex. https://www.youtube.com/watch?v=dQw4w9WgXcQ"> <br/>
 		<input id="createPost" class="form-control" type="submit" value="Create Post">
 	</div>
 	</form>
