@@ -237,3 +237,15 @@ margin: 2% 0;
 .editNav ul{
 	height: 50px;
 }
+
+@media (min-width: 1600px) {
+	.abso{
+	top: 12%;
+	left: .5%;
+	}
+	.absol {
+		top: 12%;
+	left: .5%;
+
+	}
+}
