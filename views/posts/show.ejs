@@ -11,18 +11,15 @@
 </head>
 <body>
 <header>
- <h1><%=post.title%></h1>
- <small>
-				by:
-				<a href="/members/<%=member._id%>"><%=member.username%></a>
-
-			</small>
 <nav class="navbar navbar-default">
 <div class="container-fluid">
  	<ul class="nav navbar-nav">
  		<li>
  			<a href="/posts">Posts Index</a>
 
+ 		</li>
+ 		<li>
+ 			<a href="/posts/new">New Post</a>
  		</li>
  			<li>
  			<a href="/">Home</a>
@@ -33,6 +30,12 @@
  	</ul>
  	</div>
  </nav>
+ <h1><%=post.title%></h1>
+ <small>
+				<div id="postAuthor"> by:
+				<a href="/members/<%=member._id%>"><%=member.username%></a>
+		</div>
+			</small>
 </header>
 <main>
 	<section>
